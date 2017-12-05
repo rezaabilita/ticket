@@ -1,0 +1,267 @@
+		html, 
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			font-family: 'mjNegar';
+            background-image: url("../img/bg-bus.jpg");
+            background-size: cover;
+            background-position: 100%;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        
+		.page_home      {background-image: url(../img/bg-rear-bus.jpg);}
+		.page_login     {background-image: url(../img/bg-bus.jpg);}
+		.page_register  {background-image: url(../img/bg-bus.jpg);}
+		.page_logout    {background-image: url(../img/bg-bus.jpg);}
+		.page_addticket {background-image: url(../img/old-admins-bus.jpg);}
+		
+        #content {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 100px auto;
+            position: relative;
+        }
+        
+        #ana {
+            background-color: rgba(0,0,0, .6);  
+            padding-top: 50px;
+            border-radius: 5px;
+            padding-bottom: 30px;
+        }
+        
+		#ana table {
+			margin: 0 auto;
+			direction: rtl;
+		}
+		
+		#ana table .form_custom_row td select {
+			width: 149px;
+		}
+		
+        #profil {
+            position: absolute;
+            left:41%;
+            top:-40px;
+            z-index: 999;
+        }
+        
+        #profil img {
+            width: 100%;
+            max-width: 120px;
+            border-radius: 100%;
+            box-shadow: 0 0 15px black;
+        }
+        
+		label {
+			font-family: 'mjNegar';
+		}
+		
+        input[type="text"], input[type="password"], input[type="date"], select {
+            width: 300px;
+            height: 40px;
+            box-sizing: border-box;
+            padding: 10px;
+            font-weight: bold;
+            text-align: right;
+            font-family: 'mjNegar';
+        }
+        
+        
+        input[type="submit"] {
+            width: 150px;
+            background: #16a085;
+            color: white;
+            opacity: 1;
+            font-weight: bold;
+            font-size: 20px;
+            box-sizing: border-box;
+            padding: 20px;
+            border:0;
+            outline: 0;
+            cursor: pointer;
+            opacity:1;
+            font-family: 'mjNegar';
+        }
+       
+
+        #sifre {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-family: "Arial";
+        }
+		
+		.align-left {
+			text-align: left;
+		}
+		
+		.align-right {
+			text-align: right;
+		}
+		
+		.align-center {
+			text-align: center;
+		}
+		
+		.validation_errors {
+			color: white;
+			direction: rtl;
+			background-color: rgba(255, 0, 0, 0.2);
+		}
+		
+		.page_errors {
+			color: white;
+			margin: 1em 0;
+			direction: rtl;
+			background-color: rgba(255, 0, 0, 0.2);
+		}
+		
+		.page_msg {
+			color: white;
+			margin: 1em 0;
+			direction: rtl;
+			background-color: rgba(0, 255, 0, 0.2);
+		}
+		
+		.page_header {
+			text-align: right;
+			padding: 0 30px;
+			margin: 0 0 30px 0;
+		}
+		
+		.page_header span {
+			color: white;
+			font-size: 30px;
+			font-family: 'mjNegar';
+			text-decoration: none;
+		}
+		
+		.page_header a {
+			color: white;
+			float: left;
+			margin: 15px 0 0 0;
+			font-size: 18px;
+			font-family: 'mjNegar';
+			text-decoration: none;
+		}
+		
+
+/* ==========================================================================
+    font face
+   ========================================================================== */
+
+@font-face {
+    font-family: 'mjNegar';
+    src: url('../fonts/ANegaar.ttf') format('truetype');
+}
+
+#adminBtn{
+    width: 150px;
+    background: #0444bd;
+    color: white;
+    opacity: 1;
+    font-weight: bold;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 20px;
+    border:0;
+    outline: 0;
+    cursor: pointer;
+    opacity:1;
+    margin-top:20px;
+    font-family: 'mjNegar';
+    text-decoration: none;
+}
+
+/* navbar */
+.nav_bar_holder {
+	width: 1000px;
+	height: 60px;
+	margin: 50px auto 10px auto;
+	direction: rtl;
+}
+
+.nav_bar_holder span {
+	line-height: 60px;
+	text-shadow: 0 0 5px #000;
+}
+
+.nav_bar_holder .nav_bar {
+	width: 40%;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	white-space: nowrap;
+}
+
+.nav_bar_holder .nav_bar li {
+	width: 50%;
+	height: 60px;
+}
+
+.nav_bar_holder .nav_bar li a {
+	color: white;
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	line-height: 60px;
+	font-family: 'mjNegar';
+	text-shadow: 0 0 5px #000;
+	text-decoration: none;
+}
+
+.nav_bar_holder .nav_bar.right_area {
+	float: right;
+}
+
+.nav_bar_holder .nav_bar.right_area li {
+	float: right;
+}
+
+.nav_bar_holder .nav_bar.left_area {
+	float: left;
+}
+
+.nav_bar_holder .nav_bar.left_area li {
+	float: left;
+}
+
+/* membership */
+.membership {
+	width: 980px;
+	height: auto;
+	margin: -10px auto 10px auto;
+	direction: rtl;
+	text-shadow: 0 0 5px #000;
+}
+
+.membership span {}
+
+.membership span i {}
+
+.membership .access_level {
+	margin: 0 10px 0 0;
+}
+
+/* history table */
+.history_table {
+	width: 90%;
+	border-spacing: 0;
+	border: 1px #000 solid;
+	text-align: center;
+}
+
+.history_table thead td {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.history_table td {
+	padding: 5px;
+	border: 1px #000 solid;
+	background: rgba(255, 255, 255, 0.1);
+}
