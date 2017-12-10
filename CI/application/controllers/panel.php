@@ -363,6 +363,68 @@ class panel extends CI_Controller
 	}
 	
 	/**
+	 * Sample page.
+	 */
+	public function sample()
+	{
+		// redirect user to login page if not logged in yet
+		if(!$this->isOnline())
+			redirect('panel/login', 'refresh');
+		
+		// get current user
+		$user = $this->user_model->get_user($this->session->userdata('user_id'));
+		
+		// redirect to home page if user dosen't have permission
+		if($this->get_permission($user->user_rank) != 'is_owner')
+			redirect('/');
+		
+		// create the data object
+		$data = new stdClass();
+		
+		$data->samples = $this->user_model->get_samples();
+		
+		// set validation rules
+		$this->form_validation->set_rules('first_name', 'نام', 'trim|required|alpha_numeric');
+		$this->form_validation->set_rules('last_name', 'نام خانوادگی', 'trim|required|alpha_numeric');
+		
+		if($this->form_validation->run() === false)
+		{
+			// validation not ok, send validation errors to the view
+			$this->getHeader('پنل - سمپل', 'page_sample');
+			$this->load->view('panel/sample/sample', $data);
+			$this->getFooter();
+		}
+		else
+		{
+			// set variables from the form
+			$first_name = $this->input->post('first_name');
+			$last_name  = $this->input->post('last_name');
+			
+			if($this->user_model->create_sample($first_name, $last_name))
+			{
+				// prepare some data
+				$data->first_name = $first_name;
+				$data->last_name  = $last_name;
+				
+				// user creation ok
+				$this->getHeader('پنل - سمپل', 'page_sample');
+				$this->load->view('panel/sample/sample_success', $data);
+				$this->getFooter();
+			}
+			else
+			{
+				// user creation failed, this should never happen
+				$data->error = 'خطایی رخ داده است لطفا مجددا امتحان کنید.';
+				
+				// send error to the view
+				$this->getHeader('پنل - سمپل', 'page_sample');
+				$this->load->view('panel/sample/sample', $data);
+				$this->getFooter();
+			}
+		}
+	}
+
+	/**
 	 * Get current user rank
 	 */
 	private function get_permission($rank_id = 0)

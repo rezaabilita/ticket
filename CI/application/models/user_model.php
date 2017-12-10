@@ -26,6 +26,30 @@ class User_model extends CI_Model
 	}
 	
 	/**
+	 * create_sample function.
+	 */
+	public function create_sample($first_name, $last_name)
+	{
+		$data = array(
+			'name'   => $first_name,
+			'family' => $last_name
+		);
+		
+		return $this->db->insert('sample_for_git_assignment', $data);
+	}
+
+	/**
+	 * get_samples function.
+	 */
+	public function get_samples()
+	{
+		$this->db->select('*')
+				 ->from('sample_for_git_assignment');
+		
+		return $this->db->get()->result_array();
+	}
+
+	/**
 	 * user_login function.
 	 */
 	public function user_login($email, $password)
